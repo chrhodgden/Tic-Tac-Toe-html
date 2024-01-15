@@ -20,23 +20,27 @@ const checkVictory = function() {
 		checkSum = checkRow.reduce((acc, value) => acc + value, 0);	
 		if (checkSum == 3) {
 			victory = true;
-			board.victory_row = row;
+			this.victoryRow = row;
 		};
 		checkRow = this.oBoard.filter((_, index) => row.includes(index));
 		checkSum = checkRow.reduce((acc, value) => acc + value, 0);	
 		if (checkSum == 3) {
 			victory = true;
-			board.victory_row = row;
+			this.victoryRow = row;
 		};
 	});
 	if (victory) {
-		board.victor = board.turn;
+		this.victor = this.turn;
+		this.colorVictoryRow();
 	};
 	return(victory);
 };
 
 const colorVictoryRow = function () {
-	
+	this.victoryRow.forEach(squareIndex => {
+		this.squares[squareIndex].style.color = 'var(--background-color)';
+		this.squares[squareIndex].style.backgroundColor = 'var(--foreground-color)';
+	});
 };
 
 const squareClick = function() {
@@ -77,6 +81,7 @@ const initBoard = function(board) {
 		//diagonals
 		[0, 4, 8], [2, 4, 6]
 	];
+	board.colorVictoryRow = colorVictoryRow;
 };
 
 const board = document.getElementById('board'); 
