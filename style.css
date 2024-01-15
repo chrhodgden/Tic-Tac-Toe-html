@@ -1,0 +1,65 @@
+:root{
+	--foreground-color: hsl(180, 50%, 50%);
+	--background-color: hsl(0, 0%, 0%);
+}
+
+@media (max-width: 600px) {
+	html {
+		font-size: 1.5rem; 
+	}
+}
+
+@media (min-width: 601px) {
+	html {
+		font-size: 1rem; 
+	}
+}
+
+body {
+	color: var(--foreground-color);
+	background-color: var(--background-color);
+}
+
+hr {
+	border-color: var(--foreground-color);
+}
+
+nav {
+	color: var(--foreground-color);
+	text-align: center;
+	clear: both;
+}
+
+.board {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	max-width: 12rem; 
+	max-height: 12rem; 
+}
+
+.square {
+	border: 0.01rem solid var(--foreground-color);
+	height: 4rem;
+	width: 4rem;
+	font-size: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.square:nth-child(3n+1) {
+	border-left: 0;
+}
+
+.square:nth-child(3n+3) {
+	border-right: 0;
+}
+
+.square:nth-child(-n+3) {
+	border-top: 0;
+}
+
+.square:nth-child(n+6) {
+	border-bottom: 0;
+}
