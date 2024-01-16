@@ -1,6 +1,8 @@
 :root{
 	--foreground-color: hsl(180, 50%, 50%);
 	--background-color: hsl(0, 0%, 0%);
+	--x-color: hsl(300, 100%, 50%);
+	--o-color: hsl(180, 100%, 50%);
 }
 
 @media (max-width: 600px) {
@@ -62,4 +64,15 @@ nav {
 
 .square:nth-child(n+6) {
 	border-bottom: 0;
+}
+
+.x {
+	stroke-width: var(--stroke-width);
+	stroke: var(--x-color);
+}
+
+.o {
+	stroke-width: var(--stroke-width);
+	stroke: var(--o-color);
+	fill-opacity: 0;
 }

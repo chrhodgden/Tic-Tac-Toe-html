@@ -1,5 +1,13 @@
 console.log('Hello from app.js');
 
+fetch('svg/x.svg')
+	.then(response => response.text())
+	.then(fileContents => {
+		console.log(fileContents);
+	})
+	.catch(error => console.error('Error reading the file:', error));
+
+
 const turns = {true: 'X', false: 'O'};
 
 const getXBoard = function() {
