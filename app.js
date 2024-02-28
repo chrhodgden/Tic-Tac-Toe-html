@@ -1,6 +1,6 @@
 console.log('Hello from app.js');
 
-const turns = {true: 'X', false: 'O'};
+const turns = {true: 'X', false: 'Z'};
 
 const getXBoard = function() {
 	return this.bitBoard.slice(0, 9);
